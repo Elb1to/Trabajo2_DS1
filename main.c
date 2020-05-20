@@ -2,13 +2,15 @@
 #include <conio.h>
 #include <math.h>
 #include <io.h>
+#define clearScreen() printf("\e[1;1H\e[2J")
+
+void costoDeLapices();
+void almacenFactory();
 
 void main() {
-    /*
-     * Here we'll declarate the variables for the main method
-     * integers: option;
-     */
-    int option, loopOptions;
+    int selectOption;
+    clearScreen();
+
     printf("\n\n\n[]===========================================[]\n");
     printf("Selecciona un algoritmo que desees probar.\n\n");
     printf("1. Costo de lapices\n");
@@ -23,4 +25,43 @@ void main() {
     printf("10. Sueldo semanal\n");
     printf("[]===========================================[]\n");
     getch();
+    switch (selectOption) {
+        case 1:
+            costoDeLapices();
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        case 7:
+            break;
+        case 8:
+            break;
+        case 9:
+            break;
+        case 10:
+            break;
+    }
 }
+
+void costoDeLapices() {
+    int cantidadLapices;
+    float precioTotal;
+
+    printf("Introducir la cantidad de lapices a pagar: ");
+    scanf(cantidadLapices);
+
+    if (cantidadLapices >= 1000) {
+        precioTotal = cantidadLapices * 0.85;
+    } else {
+        precioTotal = cantidadLapices * 0.90;
+    }
+    printf("El total a pagar por ", cantidadLapices, " lapices es: ", precioTotal);
+}
+

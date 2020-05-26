@@ -74,12 +74,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Elb1to/CLionProjects/Trabajo2_DS1/algorithms/pencils.cpp">
-			<Option target="Trabajo2_DS1"/>
-		</Unit>
-		<Unit filename="C:/Users/Elb1to/CLionProjects/Trabajo2_DS1/algorithms/pencils.h">
-			<Option target="Trabajo2_DS1"/>
-		</Unit>
 		<Unit filename="C:/Users/Elb1to/CLionProjects/Trabajo2_DS1/main.c">
 			<Option target="Trabajo2_DS1"/>
 		</Unit>

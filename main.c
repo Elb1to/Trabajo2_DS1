@@ -13,6 +13,14 @@ void descubrirMenorEdad();
 void becaUniversitaria();
 void sueldoSemanal();
 
+/*
+ * Made with love by Victor Abrego (a.k.a Elb1to)
+ * Github: https://github.com/Elb1to
+ * Project repository: https://github.com/Elb1to/Trabajo2_DS1
+ *
+ * Coded on May 25th of 2020
+ */
+
 int main() {
     int selectOption;
     system("cls");

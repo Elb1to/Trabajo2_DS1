@@ -13,4 +13,6 @@ stdlib.h
 -
 conio.h
 -
+math.h
+-
 

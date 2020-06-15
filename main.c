@@ -1,17 +1,57 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <math.h>
 
 void costoDeLapices();
+
 void almacenFactory();
+
 void laDoniaRestaurante();
+
 void vinicultores();
+
 void viajeDeEstudios();
+
 void enviosDePaquetesInternacionales();
+
 void estacionamientosEstablecimiento();
+
 void descubrirMenorEdad();
+
 void becaUniversitaria();
+
 void sueldoSemanal();
+
+void numeroMayor();
+
+void sumaDeNumeros();
+
+void promedioDeEdades();
+
+void estaturaPromedio();
+
+void ahorroPorAnio();
+
+void diferenciasDeNumeros();
+
+void numeroPares();
+
+void sucesionFibonacci();
+
+void registroDeHoras();
+
+void distanciaEntreCarreteras();
+
+void tikiTaka();
+
+void pagoEnCuotas();
+
+void pagoDeEmpresaPorSueldoSemanal();
+
+void interesesBancarios();
+
+void gerenteDeCompania();
 
 /*
  * Made with love by Victor Abrego (a.k.a Elb1to)
@@ -19,6 +59,7 @@ void sueldoSemanal();
  * Project repository: https://github.com/Elb1to/Trabajo2_DS1
  *
  * Coded on May 25th of 2020
+ * Latest commit: June 15th, 2020
  */
 
 int main() {
@@ -84,6 +125,66 @@ int main() {
         case 10:
             system("cls");
             sueldoSemanal();
+            break;
+        case 11:
+            system("cls");
+            numeroMayor();
+            break;
+        case 12:
+            system("cls");
+            sumaDeNumeros();
+            break;
+        case 13:
+            system("cls");
+            promedioDeEdades();
+            break;
+        case 14:
+            system("cls");
+            estaturaPromedio();
+            break;
+        case 15:
+            system("cls");
+            ahorroPorAnio();
+            break;
+        case 16:
+            system("cls");
+            diferenciasDeNumeros();
+            break;
+        case 17:
+            system("cls");
+            numeroPares();
+            break;
+        case 18:
+            system("cls");
+            sucesionFibonacci();
+            break;
+        case 19:
+            system("cls");
+            registroDeHoras();
+            break;
+        case 20:
+            system("cls");
+            distanciaEntreCarreteras();
+            break;
+        case 21:
+            system("cls");
+            tikiTaka();
+            break;
+        case 22:
+            system("cls");
+            pagoEnCuotas();
+            break;
+        case 23:
+            system("cls");
+            pagoDeEmpresaPorSueldoSemanal();
+            break;
+        case 24:
+            system("cls");
+            interesesBancarios();
+            break;
+        case 25:
+            system("cls");
+            gerenteDeCompania();
             break;
     }
 }
@@ -460,6 +561,353 @@ void sueldoSemanal() {
         system("cls");
         printf("Trabajar mas de 50 horas no esta permitido!\nVaya a descansar en su casa.");
     }
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+void consumoDeAgua() {
+    int consumo;
+    float centesimos1 = 0.15, centesimos2 = 0.20, centesimos3 = 0.35, centesimos4 = 0.80, total;
+
+    printf("Consumo de agua");
+    printf("Cant de metros cubicos: ");
+    scanf("%d", &consumo);
+
+    if (consumo <= 100) {
+        total = consumo * centesimos1;
+        printf("Costo a pagar por el agua: USD$%.2f", total);
+    } else if (consumo > 100 && consumo <= 500) {
+        total = consumo * centesimos2;
+        printf("Costo a pagar por el agua: USD$%.2f", total);
+    } else if (consumo > 500 && consumo <= 1000) {
+        total = consumo * centesimos3;
+        printf("Costo a pagar por el agua: USD$%.2f", total);
+    } else if (consumo > 1000) {
+        total = consumo * centesimos4;
+        printf("Costo a pagar por el agua: USD$%.2f", total);
+    }
+    if ((consumo > 1 && consumo < 5) || consumo == 8) {
+        centesimos1 = 0.15;
+    }
+    if (consumo > 1) if (consumo < 50 || consumo >= 8) centesimos1 = 5.89 * sqrt(6);
+}
+
+// Problema 1
+// Funciona
+void numeroMayor() {
+    int loopeos, mayor = 0, numero;
+
+    printf("Introduzca la cantidad de numeros que desea comparar para obtener el mayor: ");
+    scanf("%i", &loopeos);
+
+    for (int i = 1; i <= loopeos; i++) {
+        printf("Introduzca el valor del numero: ");
+        scanf("%i", &numero);
+        if (i == 1 || mayor < numero) {
+            mayor = numero;
+        }
+    }
+
+    printf("\nEl numero mas grande es: %i", mayor);
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 2
+// Funciona
+void sumaDeNumeros() {
+    int numero, sumaGuardada = 0;
+
+    printf("Introduzca 10 numeros. Todos estos numeros seran sumados.");
+
+    for (int i = 0; i <= 10; i++) {
+        scanf("%i", &numero);
+        printf("\nNumero ingresado: %i", numero);
+        sumaGuardada = sumaGuardada + numero;
+        printf("\nNuevo total: %i", sumaGuardada);
+    }
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 3
+// Funciona
+void promedioDeEdades() {
+    int edad, edadesGuardadas = 0, cantidadDeAlumnos;
+
+    printf("Introduzca la cantidad de alumnos que desea calcular para obtener la edad promedio: ");
+    scanf("%i", &cantidadDeAlumnos);
+    printf("\n\nIntroduzca la edad de %i", cantidadDeAlumnos);
+    printf(" diferentes personas\n\n");
+
+    for (int i = 1; i <= cantidadDeAlumnos; i++) {
+        printf("\nIntroduzca la edad: ");
+        scanf("%i", &edad);
+        edadesGuardadas = edadesGuardadas + edad;
+    }
+    edadesGuardadas = edadesGuardadas / cantidadDeAlumnos;
+    printf("\nEdad promedio: %i", edadesGuardadas);
+
+    printf("\n\nPresione cualquier tecla para regresar al menu principal.");
+    getch();
+    main();
+}
+
+// Problema 4
+// Funciona
+void estaturaPromedio() {
+    int cantidad = 0;
+    float estatura, promedio = 0;
+    char confirmacion;
+
+    do {
+        system("cls");
+        printf("Ingrese la estatura de la persona: ");
+        scanf("%f", &estatura);
+        promedio = promedio + estatura;
+        cantidad = cantidad + 1;
+        printf("\n\nDesea repetir el proceso?");
+        printf("\nPresione la tecla 'S' o 'N'");
+        do {
+            scanf("%s", &confirmacion);
+        } while (confirmacion != 's' && confirmacion != 'n' && confirmacion != 'S' && confirmacion != 'N');
+    } while (confirmacion == 's' || confirmacion == 'S');
+    if (cantidad == 0) {
+        promedio = 0;
+    } else {
+        promedio = promedio / cantidad;
+    }
+
+    printf("\nCantidad de estaturas introducidas: %i", cantidad);
+    printf("\nEstatura promedio: %.2f", promedio);
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 5
+// TODO: Verificar y corregir si no sirve como debe ser
+void ahorroPorAnio() {
+    int acum, dinero;
+
+    for (int meses = 0; meses <= 12; meses++) {
+        printf("\n\nIntroduzca la cantidad de dinero que desea ahorrar este mes: ");
+        scanf("%i", &dinero);
+        printf("\nEste mes has ahorrado: %i", dinero);
+        acum = dinero + acum;
+    }
+
+    printf("\nHas ahorrado %i", acum, " en un lapso de 12 meses.");
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 6
+// Funciona
+void diferenciasDeNumeros() {
+    int numero, saveN = 0, saveP = 0, cantidad = 0;
+
+    printf("\nIntroduzca la cantidad de numeros que utilizara: ");
+    scanf("%i", &cantidad);
+
+    for (int i = 0; i < cantidad; i++) {
+        scanf("%i", &numero);
+        if (numero <= 0) {
+            saveN++;
+        } else {
+            saveP++;
+        }
+    }
+
+    printf("\n\nTotal de numeros negativos: %i", saveN);
+    printf("\n\nTotal de numeros positivos: %i", saveP);
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 7
+// Funciona
+void numeroPares() {
+    int par = 2;
+
+    printf("Se mostraran en pantalla todos los numeros PARES del 0 al 100.\n\n");
+    for (int i = 0; par < 100; i++) {
+        par = par + 2;
+        printf("  %i", par);
+    }
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 8
+// Funciona
+void sucesionFibonacci() {
+    int limite, fibo1 = 0, fibo2 = 1, fibo3;
+
+    printf("\n\n=========================\nSucesion de Fibonacci\n=========================\n\n");
+    printf("Introduzca la cantidad de sucesiones que quiere mostrar: ");
+    scanf("%i", &limite);
+    printf("%i ", fibo1);
+    printf("%i ", fibo2);
+
+    for (int i = 2; i <= limite; i++) {
+        fibo3 = fibo1 + fibo2;
+        printf("%i ", fibo3);
+        fibo1 = fibo2;
+        fibo2 = fibo3;
+    }
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 9
+// TODO: Arreglar el guardado de dinero
+void registroDeHoras() {
+    int horas = 0, gHoras = 0, dias;
+    float salario = 0.0, pago = 0.0;
+
+    printf("\nIntroduzca lo que cobra por hora: ");
+    scanf("%f", &salario);
+
+    for (int i = 0; i < 6; i++) {
+        printf("\nIntroduzca el numero del dia [1 - 6] en el que trabajo (en orden): ");
+        scanf("%i", &dias);
+        gHoras = gHoras + horas;
+        switch (dias) {
+            case 1:
+                printf("\n\nIntroduzca cuantas horas trabajo el lunes: ");
+                scanf("%i", &horas);
+                //pago = salario * horas;
+                printf("\nLunes (%i", horas);
+                printf(" horas trabajadas). Recibira USD$%.2f", pago);
+                break;
+            case 2:
+                printf("\n\nIntroduzca cuantas horas trabajo el martes: ");
+                scanf("%i", &horas);
+                //pago = salario * horas;
+                printf("\nMartes (%i", horas);
+                printf(" horas trabajadas). Recibira USD$%.2f", pago);
+                break;
+            case 3:
+                printf("\n\nIntroduzca cuantas horas trabajo el miercoles: ");
+                scanf("%i", &horas);
+                //pago = salario * horas;
+                printf("\nMiercoles (%i", horas);
+                printf(" horas trabajadas). Recibira USD$%.2f", pago);
+                break;
+            case 4:
+                printf("\n\nIntroduzca cuantas horas trabajo el jueves: ");
+                scanf("%i", &horas);
+                //pago = salario * horas;
+                printf("\nJueves (%i", horas);
+                printf(" horas trabajadas). Recibira USD$%.2f", pago);
+                break;
+            case 5:
+                printf("\n\nIntroduzca cuantas horas trabajo el viernes: ");
+                scanf("%i", &horas);
+                //pago = salario * horas;
+                printf("\nViernes (%i", horas);
+                printf(" horas trabajadas). Recibira USD$%.2f", pago);
+                break;
+            case 6:
+                printf("\n\nIntroduzca cuantas horas trabajo el sabado: ");
+                scanf("%i", &horas);
+                //pago = salario * horas;
+                printf("\nSabado (%i", horas);
+                printf(" horas trabajadas). Recibira USD$%.2f", pago);
+                break;
+        }
+    }
+
+    printf("\n\n\nTotal de horas trabajadas durante la semana: %i", gHoras);
+    printf("\nPago total en base a las horas trabajadas: %.2f", pago);
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 10
+// Funciona
+void distanciaEntreCarreteras() {
+    int p1 = 70, p2 = 150, interseccion;
+
+    interseccion = p1 + (p2 - p1) / 2;
+    printf("\nLa persona #1 se encontrara con la persona #2 en el kilometro: %i", interseccion);
+    printf(" de la carretera.");
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 11
+// Coding
+void tikiTaka() {
+    //TODO: Write code xd
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 12
+// Funciona
+void pagoEnCuotas() {
+    float pago = 5.0, pagoTotal;
+
+    for (int i = 1; i <= 20; i++) {
+        pago = pago * 2;
+        printf("\nEl pago mensual es equivalente a: USD$%.2f", pago);
+    }
+    
+    pagoTotal = (pago * 2) - 10;
+    printf("\n\nEl pago total es: USD$%.2f", pagoTotal);
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 13
+// Coding
+void pagoDeEmpresaPorSueldoSemanal() {
+    //TODO: Write code xd
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 14
+// Coding
+void interesesBancarios() {
+    //TODO: Write code xd
+
+    getch();
+    printf("Presione cualquier tecla para regresar al menu principal.");
+    main();
+}
+
+// Problema 15
+// Coding
+void gerenteDeCompania() {
+    //TODO: Write code xd
 
     getch();
     printf("Presione cualquier tecla para regresar al menu principal.");

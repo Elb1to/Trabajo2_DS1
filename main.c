@@ -704,7 +704,8 @@ void ahorroPorAnio() {
         acum = dinero + acum;
     }
 
-    printf("\nHas ahorrado %i", acum, " en un lapso de 12 meses.");
+    printf("\nHas ahorrado %i", acum);
+    printf(" en un lapso de 12 meses!");
 
     getch();
     printf("Presione cualquier tecla para regresar al menu principal.");
@@ -858,8 +859,21 @@ void distanciaEntreCarreteras() {
 
 // Problema 11
 // Coding
-void tikiTaka() {
-    //TODO: Write code xd
+void horaHomo() {
+    int hora;
+    scanf("%i", &hora);
+    if (hora >= 0 && hora <= 12) {
+        printf("Buenos dias");
+        if (hora > 12 && hora <= 18) {
+            printf("Buenas tardes");
+            if (hora > 18 && hora <= 24) {
+                printf("Buenas noches");
+                if (hora <= 0 && hora >= 24) {
+                    printf("Hora no valida");
+                }
+            }
+        }
+    }
 
     getch();
     printf("Presione cualquier tecla para regresar al menu principal.");
